@@ -1,0 +1,61 @@
+﻿@model IEnumerable<Keys_Onboarding_Ko.Models.Customer>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<input type="hidden" id="customer" />
+<h2>Index</h2>
+
+<p>
+    @*@Html.ActionLink("Create New", "Create")*@
+    <input class="btn btn-sm btn-success" type="button" value="Create New" data-bind="click:createNew" />
+</p>
+<table class="table table-responsive table-hover">
+    <thead>
+        <tr>
+            <th>
+                Id
+            </th>
+            <th>
+                Name@*@Html.DisplayNameFor(model => model.Name)*@
+            </th>
+            <th>
+                Address@*@Html.DisplayNameFor(model => model.Address)*@
+            </th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+
+    <tbody data-bind="foreach: customers">
+        <tr>
+            <td data-bind="text: Id"></td>
+            <td data-bind="text: Name"></td>
+            <td data-bind="text: Address"></td>
+            <td>
+                <input class="btn btn-sm btn-success" type="button" value="Edit" data-bind="click: $root.edit" />
+                <input class="btn btn-sm btn-danger" type="button" value="Delete" data-bind="click: $root.delete" />
+            </td>
+        </tr>
+    </tbody>
+
+</table>
+
+<!-- Modals -->
+
+@Html.Partial("~/Views/Customers/CreateModal.cshtml")
+
+@Html.Partial("~/Views/Customers/EditModal.cshtml")
+
+@Html.Partial("~/Views/Customers/DeleteModal.cshtml")
+
+
+
+
+<script src="~/MyScript/CustomersViewModel.js"></script>
+<script type="text/javascript">
+    $(function () {
+        $('#customerMenu').css({ 'color': 'white' });
+        $('#customerMenu').css('border-bottom', 'solid 2px red');
+    });
+</script>

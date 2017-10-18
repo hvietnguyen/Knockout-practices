@@ -1,0 +1,60 @@
+﻿@model IEnumerable<Keys_Onboarding_Ko.Models.Product>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<input type="hidden" id="product" />
+<h2>Index</h2>
+
+<p>
+    <input class="btn btn-sm btn-success" type="button" value="Create New" data-bind="click:createNew" />
+</p>
+<table class="table table-responsive table-hover">
+    <thead>
+        <tr>
+            <th>
+                Id
+            </th>
+            <th>
+                Name
+            </th>
+            <th>
+                Price
+            </th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    
+    <tbody data-bind="foreach: products">
+        <tr>
+            <td data-bind="text: Id"></td>
+            <td data-bind="text: Name"></td>
+            <td data-bind="text: FormattedPrice"></td>
+            <td>
+                <input class="btn btn-sm btn-success" type="button" value="Edit" data-bind="click: $root.edit" />
+                <input class="btn btn-sm btn-danger" type="button" value="Delete" data-bind="click: $root.delete" />
+            </td>
+        </tr>
+    </tbody>
+
+</table>
+
+<!-- Modals -->
+
+@Html.Partial("~/Views/Products/CreateModal.cshtml")
+
+@Html.Partial("~/Views/Products/EditModal.cshtml")
+
+@Html.Partial("~/Views/Products/DeleteModal.cshtml")
+
+
+
+
+<script src="~/MyScript/ProductsViewModel.js"></script>
+<script type="text/javascript">
+    $(function () {
+        $('#productMenu').css({ 'color': 'white' });
+        $('#productMenu').css('border-bottom', 'solid 2px red');
+    });
+</script>

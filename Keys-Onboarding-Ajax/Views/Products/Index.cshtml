@@ -1,0 +1,24 @@
+﻿@model IEnumerable<Keys_Onboarding_Ajax.Models.Product>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @*@Html.ActionLink("Create New", "Create")*@
+    <input class="btn btn-sm btn-success" type="button" value="Create New" onclick="create('/Products/Create')" />
+</p>
+<table id="products" class="table">
+    
+
+</table>
+
+<!-- Modals -->
+
+<div id="myModal" class="modal fade" role="dialog">
+</div>
+
+<script src="~/Control_Scripts/Products.js"></script>    

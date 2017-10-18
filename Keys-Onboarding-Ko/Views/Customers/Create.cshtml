@@ -1,0 +1,66 @@
+﻿@*@model Keys_Onboarding_Ko.Models.Customer
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}*@
+<div id="myModal" class="modal fade" data-backdrop="static" data-keyboard="false" data-bind="with: currentCustomer()">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Creat New</h4>
+            </div>
+            <div class="modal-body">
+                @*<p>Some text in the modal.</p>*@
+                <div class="form-horizontal">
+                    <h5>Customer</h5>
+                    <hr />
+                    @*@Html.ValidationSummary(true, "", new { @class = "text-danger" })*@
+                    <div class="form-group">
+                        @*@Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })*@
+                        <label class="control-lable col-md-2" for="Name">Name</label>
+                        <div class="col-md-10">
+                            @*@Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })*@
+                            <input class="form-control" data-bind="value: Name()" />
+                            <span class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @*@Html.LabelFor(model => model.Address, htmlAttributes: new { @class = "control-label col-md-2" })*@
+                        <label class="control-lable col-md-2" for="Address">Address</label>
+                        <div class="col-md-10">
+                            @*@Html.EditorFor(model => model.Address, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.Address, "", new { @class = "text-danger" })*@
+                            <input class="form-control" data-bind="value: Address()" />
+                            <span class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <a href="#" class="btn btn-sm btn-success" data-bind="click: $root.save">Save</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-sm btn-warning" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+    @*<div>
+            @Html.ActionLink("Back to List", "Index")
+        </div>*@
+
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+    }

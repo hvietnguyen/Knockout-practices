@@ -1,0 +1,69 @@
+﻿@model IEnumerable<Keys_Onboarding_Ko.Models.ProductSold>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<input type="hidden" id="productSold" />
+<h2>Index</h2>
+
+<p>
+    <input class="btn btn-sm btn-success" type="button" value="Create New" data-bind="click:createNew" />
+</p>
+<table class="table table-responsive table-hover">
+    <thead>
+        <tr>
+            <th>
+                Id
+            </th>
+            <th>
+                Product
+            </th>
+            <th>
+                Customer
+            </th>
+            <th>
+                Store
+            </th>
+            <th>
+                Date
+            </th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+
+    <tbody data-bind="foreach: productSolds">
+        <tr>
+            <td data-bind="text: Id"></td>
+            <td data-bind="text: Product().Name"></td>
+            <td data-bind="text: Customer().Name"></td>
+            <td data-bind="text: Store().Name"></td>
+            <td data-bind="text: FormattedDate"></td>
+            <td>
+                <input class="btn btn-sm btn-success" type="button" value="Edit" data-bind="click: $root.edit" />
+                <input class="btn btn-sm btn-danger" type="button" value="Delete" data-bind="click: $root.delete" />
+            </td>
+        </tr>
+    </tbody>
+
+</table>
+
+<!-- Modals -->
+
+@Html.Partial("~/Views/ProductSolds/CreateModal.cshtml")
+
+@Html.Partial("~/Views/ProductSolds/EditModal.cshtml")
+
+@Html.Partial("~/Views/ProductSolds/DeleteModal.cshtml")
+
+
+
+
+<script src="~/MyScript/ProductSoldsViewModel.js"></script>
+<script type="text/javascript">
+    $(function () {
+        $('#saleMenu').css({ 'color': 'white' });
+        $('#saleMenu').css('border-bottom', 'solid 2px red');
+        $('#datetimepicker').datetimepicker();
+    });
+</script>

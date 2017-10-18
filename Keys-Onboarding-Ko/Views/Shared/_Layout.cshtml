@@ -1,0 +1,139 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/knockout")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/moment")
+    @Scripts.Render("~/bundles/bootstrap-datetimepicker")
+    @Scripts.Render("~/bundles/transition")
+    @Scripts.Render("~/bundles/collapse")
+
+    <style>
+        .modal-dialog {
+            margin-top: 10%;
+        }
+
+        .errorMessage {
+            text-transform: uppercase;
+        }
+
+        .validationMessage {
+            color: red;
+        }
+
+        .errorStyle {
+            color: red;
+        }
+
+        .btn-sm {
+            margin: 2px;
+        }
+
+        tr:hover{
+            color:black;
+            font-weight:bold;
+        }
+
+        tr:hover > th{
+            color:#ffffff;
+        }
+
+       .backgroundImage {
+            position: relative;
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-image: url("../../Images/sky_star.jpg");
+            background-attachment: fixed;
+            min-height: 100%;
+            /*opacity:0.8;*/
+        }
+
+        .containImage {
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-image: url("../../Images/silverfern.jpeg");
+            background-attachment: fixed;
+            min-height:100%;
+            /*opacity: 0.9;*/
+            color: #ffffff;
+        }
+
+        .container {
+            margin: 0;
+            right: 0;
+            left: 0;
+        }
+
+        .modal {
+            color:#000000;
+        }
+
+        .navbar-inverse .navbar-brand {
+            color: white;
+            text-transform: uppercase;
+        }
+
+        .navbar-nav > li > p {
+            padding: 15px;
+            margin: 0px;
+        }
+
+            .navbar-nav > li > p > a {
+                padding-bottom: 3px;
+                color: #999999;
+                text-decoration: none;
+                border-bottom: transparent solid 2px;
+            }
+
+                .navbar-nav > li > p > a:hover {
+                    border-bottom: red solid 2px;
+                }
+    </style>
+</head>
+<body class="containImage">
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="navbar-inner backgroundImage">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    @Html.ActionLink("keys", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li><p><a href="/Customers/Index" id="customerMenu">Customers</a></p></li>
+                        <li><p><a href="/Products/Index" id="productMenu">Products</a></p></li>
+                        <li><p><a href="/Stores/Index" id="storeMenu">Stores</a></p></li>
+                        <li><p><a href="/ProductSolds/Index" id="saleMenu">Sales</a></p></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+        </footer>
+
+    </div>
+
+
+    @RenderSection("scripts", required: false)
+
+</body>
+
+</html>

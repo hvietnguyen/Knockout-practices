@@ -1,0 +1,61 @@
+﻿@model IEnumerable<Keys_Onboarding_Ko.Models.Store>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<input type="hidden" id="store"/>
+<h2>Index</h2>
+<p>
+    @*@Html.ActionLink("Create New", "Create")*@
+    <input class="btn btn-sm btn-success" type="button" value="Create New" data-bind="click:createNew" />
+</p>
+<table class="table table-responsive table-hover">
+    <thead>
+        <tr>
+            <th>
+                Id
+            </th>
+            <th>
+                Name
+            </th>
+            <th>
+                Address
+            </th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+   
+    <tbody data-bind="foreach: stores">
+        <tr>
+            <td data-bind="text: Id"></td>
+            <td data-bind="text: Name"></td>
+            <td data-bind="text: Address"></td>
+            <td>
+                <input class="btn btn-sm btn-success" type="button" value="Edit" data-bind="click: $root.edit" />
+                <input class="btn btn-sm btn-danger" type="button" value="Delete" data-bind="click: $root.delete" />
+            </td>
+        </tr>
+    </tbody>
+
+</table>
+
+<!-- Modals -->
+
+@Html.Partial("~/Views/Stores/CreateModal.cshtml")
+
+@Html.Partial("~/Views/Stores/EditModal.cshtml")
+
+@Html.Partial("~/Views/Stores/DeleteModal.cshtml")
+
+
+
+
+<script src="~/MyScript/StoresViewModel.js"></script>
+<script>
+    $(function () {
+        $('#storeMenu').css({ 'color': 'white' });
+        $('#storeMenu').css('border-bottom', 'solid 2px red');
+    });
+</script>

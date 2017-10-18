@@ -1,0 +1,49 @@
+﻿@model IEnumerable<Key_onboarding.Models.Customer>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @*@Html.ActionLink("Create New", "Create","Customers", null, new { @id="openDialog"})*@
+    <input class="btn btn-sm btn-success" type="button" value="Create New" onclick="create('/Customers/Create')" />
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Address)
+        </th>
+        <th>Actions</th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Address)
+        </td>
+        <td>
+            <input class="btn btn-sm btn-success" type="button" value="Edit" onclick="edit('/Customers/Edit/'+ @item.Id)" />
+            <input class="btn btn-sm btn-danger" type="button" value="Delete" onclick="deleteItem('/Customers/Delete/'+@item.Id)" />
+            @*@Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })*@
+        </td>
+    </tr>
+}
+
+</table>
+
+<!-- Modals -->
+
+<div id="myModal" class="modal fade" role="dialog">
+</div>
+

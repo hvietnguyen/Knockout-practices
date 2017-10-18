@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Key-onboarding", "Key-onboarding\Key-onboarding.csproj", "{F6D56958-8E83-45AE-BCB9-6C81036257A3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Keys-Onboarding-Ajax", "Keys-Onboarding-Ajax\Keys-Onboarding-Ajax.csproj", "{79270D6A-5822-466A-8278-A40CE7E120B2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Keys-Onboarding-Ko", "Keys-Onboarding-Ko\Keys-Onboarding-Ko.csproj", "{8305A949-9532-4021-9ED9-126D4997091C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F6D56958-8E83-45AE-BCB9-6C81036257A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F6D56958-8E83-45AE-BCB9-6C81036257A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F6D56958-8E83-45AE-BCB9-6C81036257A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F6D56958-8E83-45AE-BCB9-6C81036257A3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{79270D6A-5822-466A-8278-A40CE7E120B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79270D6A-5822-466A-8278-A40CE7E120B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79270D6A-5822-466A-8278-A40CE7E120B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79270D6A-5822-466A-8278-A40CE7E120B2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8305A949-9532-4021-9ED9-126D4997091C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8305A949-9532-4021-9ED9-126D4997091C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8305A949-9532-4021-9ED9-126D4997091C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8305A949-9532-4021-9ED9-126D4997091C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
